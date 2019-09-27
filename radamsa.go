@@ -1,6 +1,9 @@
 // Package radamsa implements a Go interface to libradamsa.
 package radamsa
 
+// Copyright © 2019 Ramsey Dow. All rights reserved.
+// SPDX-License-Identifier: MIT
+
 // #cgo CFLAGS: -Icache
 // #cgo LDFLAGS: -Lcache -lradamsa
 // #include <radamsa.h>

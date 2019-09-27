@@ -2,6 +2,9 @@
 // goradamsa so as not to interfere with radamsa, if you have that installed.
 package main
 
+// Copyright © 2019 Ramsey Dow. All rights reserved.
+// SPDX-License-Identifier: MIT
+
 import (
 	"flag"
 	"fmt"
