@@ -82,14 +82,14 @@ func (r *Radamsa) Fuzz(input []byte, length int, output []byte, capacity int) (u
 // the gap between the C types libradamsa's API expects and the types employed by idiomatic
 // Go. len(xb) returns an int, not the Go-equivalent to a size_t. Likewise, the default
 // seed value acquired from UnixNano() returns an int64, not an unsigned int as expected by
-// libradamsa. By performing these type conversions in the interstitial layer, the caller
-// is free to deal in Go types without bothering with thinking about the underlying C types.
+// libradamsa. By performing these type conversions in the interstitial layer, the caller is
+// free to deal in Go types without having to bother with thinking about the underlying C types.
 func fuzz(input []byte, length int, output []byte, capacity int, seed int64) uint {
 	n := C.radamsa(
-		(*C.uint8_t)(unsafe.Pointer(&input[0])),	// ptr
-		C.size_t(uint(length)),									// len
-		(*C.uint8_t)(unsafe.Pointer(&output[0])), // target
-		C.size_t(uint(capacity)),								// max
-		C.uint(uint(seed)))                     // seed
+		(*C.uint8_t)(unsafe.Pointer(&input[0])),
+		C.size_t(uint(length)),
+		(*C.uint8_t)(unsafe.Pointer(&output[0])),
+		C.size_t(uint(capacity)),
+		C.uint(uint(seed)))
 	return uint(n)
 }
