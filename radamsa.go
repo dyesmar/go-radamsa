@@ -80,9 +80,9 @@ func (r *Radamsa) Fuzz(input []byte, length int, output []byte, capacity int) (u
 
 func fuzz(input []byte, length int, output []byte, capacity int, seed int64) uint {
 	n := C.radamsa(
-		(*C.uchar)(unsafe.Pointer(&input[0])),	// ptr
+		(*C.uint8_t)(unsafe.Pointer(&input[0])),	// ptr
 		C.size_t(uint(length)),									// len
-		(*C.uchar)(unsafe.Pointer(&output[0])), // target
+		(*C.uint8_t)(unsafe.Pointer(&output[0])), // target
 		C.size_t(uint(capacity)),								// max
 		C.uint(uint(seed)))                     // seed
 	return uint(n)
