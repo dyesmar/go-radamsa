@@ -1,2 +1,2 @@
 cmd := goradamsa
-version := v0.1.0-development
+version := v0.2.0-development
