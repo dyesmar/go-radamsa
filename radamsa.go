@@ -28,7 +28,7 @@ func New(opts ...Option) *Radamsa {
 	for _, opt := range opts {
 		opt(r)
 	}
-	C.init()
+	C.radamsa_init()
 	return r
 }
 

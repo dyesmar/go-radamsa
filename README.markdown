@@ -15,7 +15,7 @@ pushd radamsa
 git checkout develop
 make libradamsa-test
 mkdir -p ../cache
-cp c/radamsa.h lib/libradamsa.a ../cache
+cp c/radamsa.h lib/libradamsa.so ../cache
 rm -fr bin/libradamsa-test c/libradamsa.c lib
 popd
 ```
@@ -25,8 +25,10 @@ Now you are ready to build the test driver and give it a spin:
 ```bash
 pushd cmd/goradamsa
 make
-./goradamsa -n 100 'Yay, fuzzing!'
+LD_LIBRARY_PATH=../../cache ./goradamsa -n 100 'Yay, fuzzing!'
 ```
+
+Replace `LD_LIBRARY_PATH` with `DYLD_LIBRARY_PATH` on macOS.
 
 The `goradamsa` command serves a dual purpose: it is my test driver and it illustrates how the `radamsa` package can (but not necessarily should) be used. Type `goradamsa -h` to display the currently supported set of flags.
 
