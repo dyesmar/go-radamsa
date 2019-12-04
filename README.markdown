@@ -1,5 +1,9 @@
 # Go Radamsa
 
+![Status](https://img.shields.io/badge/status-under%20construction-red)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Platforms](https://img.shields.io/badge/platform-macOS%20|%20Linux%20|%20Windows-lightgrey.svg)
+
 The Go Radamsa package provides a Go interface to the [Radamsa](https://gitlab.com/akihe/radamsa) mutational fuzzer using [cgo](https://golang.org/cmd/cgo/). This means that you can get fuzzing in your Go programs without having to ever touch the `radamsa` binary.
 
 This is development quality software. (Refer to _[On My Funny Ideas About What Beta Means](https://inessential.com/2019/09/02/on_my_funny_ideas_about_what_beta_means)_ for the definition of what that means.) Go Radamsa has some rough edges, including but not limited to: missing functionality, no tests, no documentation, and bits of suboptimal code. All of these issues will be dealt with once `libradamsa` has been formally released (soonish). In the meantime, I may break things at any moment.
